@@ -37,6 +37,15 @@ nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-
 nav .wrap{display:flex;overflow-x:auto;gap:4px}
 nav a{color:var(--navy);text-decoration:none;font-size:14px;font-weight:bold;padding:12px 10px;white-space:nowrap}
 section{padding:30px 0 6px}
+.tabs{position:sticky;top:0;z-index:6;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tabs .wrap{display:flex;gap:8px;padding-top:10px;padding-bottom:10px}
+.tabs button{flex:1;padding:12px 6px;border:2px solid var(--navy);background:#fff;color:var(--navy);font:inherit;font-weight:bold;font-size:16px;border-radius:6px;cursor:pointer}
+.tabs button.on{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:inset 0 -4px 0 var(--gold)}
+.sp{display:none}body.s-bov .sp-bov,body.s-ave .sp-ave,body.s-cer .sp-cer{display:block}
+.retbig{background:var(--navy);color:#fff;border-radius:8px;padding:20px;text-align:center;border:3px solid var(--gold)}
+.retbig b{display:block;font-size:40px;color:var(--gold);line-height:1.1}
+.retbig span{font-size:15px;color:#DCE2E8}
+tr.hlrow td{background:#F7EFDB;font-weight:bold}
 h2{font-size:22px;color:var(--navy);margin-bottom:12px;padding-left:10px;border-left:5px solid var(--gold)}
 h3{font-size:17px;color:var(--navy);margin:18px 0 8px}
 p{margin-bottom:10px;text-align:justify}
@@ -95,21 +104,41 @@ footer b{color:#fff}
 <div class="logobar"><div class="wrap"><img src="logo.png" alt="ANIMALIA® Aditivo Tecnológico Integral"><span>Tellus Agroinnovación</span></div></div>
 <header><div class="wrap">
  <span class="reg">REG. SADER A-11078-001</span>
- <h1>Más kilos por cabeza desde el primer día.</h1>
+ <h1 class="sp sp-bov">Más kilos por cabeza desde el primer día.</h1>
+ <h1 class="sp sp-ave">Menos mortalidad y de 3 a 5 días menos de engorda.</h1>
+ <h1 class="sp sp-cer">Más kilos por cerdo con menos alimento.</h1>
  <p>Aditivo a base de ácidos orgánicos de alta pureza. Se aplica en el agua de bebida, sin equipo especial y sin cambiar la dieta ni el manejo.</p>
 </div></header>
 
-<nav><div class="wrap">
- <a href="#que-es">¿Qué es?</a><a href="#como-actua">Cómo actúa</a><a href="#engorda">Engorda</a><a href="#lecheras">Lecheras</a><a href="#uso">Cómo se aplica</a><a href="#retorno">Retorno</a><a href="#precios">Precios</a>
-</div></nav>
+<div class="tabs"><div class="wrap">
+ <button data-s="bov">🐂 Bovinos</button><button data-s="ave">🐔 Aves</button><button data-s="cer">🐖 Cerdos</button>
+</div></div>
 
 <main class="wrap">
 
-<section>
+<section class="sp sp-bov">
  <div class="grid">
   <div class="kpi"><b>+100 g</b><span>de ganancia de peso por cabeza al día</span></div>
   <div class="kpi"><b>3.8x</b><span>Retorno sobre la inversión</span></div>
   <div class="kpi"><b>$1.83</b><span>costo por cabeza al día</span></div>
+ </div>
+</section>
+
+<section class="sp sp-ave">
+ <div class="grid">
+  <div class="kpi"><b>−51 a −67%</b><span>mortalidad en pollo de engorda</span></div>
+  <div class="kpi"><b>−3 a −5</b><span>días de engorda</span></div>
+  <div class="kpi"><b>−8%</b><span>conversión alimenticia</span></div>
+  <div class="kpi"><b>6.9x a 11.5x</b><span>retorno medido en casetas comerciales</span></div>
+ </div>
+</section>
+
+<section class="sp sp-cer">
+ <div class="grid">
+  <div class="kpi"><b>+17.2%</b><span>ganancia de peso</span></div>
+  <div class="kpi"><b>−15%</b><span>alimento por kg producido</span></div>
+  <div class="kpi"><b>90%</b><span>control de ileítis</span></div>
+  <div class="kpi"><b>−94%</b><span>redrojos</span></div>
  </div>
 </section>
 
@@ -142,17 +171,9 @@ footer b{color:#fff}
   <li>Coadyuva a acortar los ciclos de engorda.</li>
   <li>Menos estrés en recibas, transporte y alta densidad.</li>
  </ul>
- <h3>Enfermedades en las que coadyuva</h3>
- <p>En bovinos, ANIMALIA® coadyuva a controlar y/o prevenir enfermedades respiratorias y digestivas, al reducir la carga microbiana en el agua y en el tracto digestivo.</p>
- <table>
-  <tr><th>Tipo</th><th>Enfermedades</th></tr>
-  <tr><td><b>Respiratorias</b></td><td>Gripe y neumonía</td></tr>
-  <tr><td><b>Digestivas</b></td><td>Salmonelosis (<i>Salmonella</i> Typhimurium), <i>E. coli</i> y <i>Clostridium perfringens</i></td></tr>
-  <tr><td><b>Vacas lecheras</b></td><td>Mastitis crónica (<i>Staphylococcus aureus</i>)</td></tr>
- </table>
- <p class="note">ANIMALIA® es un coadyuvante preventivo y no sustituye el tratamiento indicado por el médico veterinario.</p>
 </section>
 
+<div class="sp sp-bov">
 <section id="engorda">
  <h2>Bovinos de engorda</h2>
  <p>Evidencia de campo promedio: ANIMALIA® contra testigo durante 60 días, aplicado en el agua de bebida.</p>
@@ -181,6 +202,122 @@ footer b{color:#fff}
  </table>
 </section>
 
+<section id="enf-bov">
+ <h2>Enfermedades en las que coadyuva</h2>
+ <p>En bovinos, ANIMALIA® coadyuva a controlar y/o prevenir enfermedades respiratorias y digestivas, al reducir la carga microbiana en el agua y en el tracto digestivo.</p>
+ <table>
+  <tr><th>Tipo</th><th>Enfermedades</th></tr>
+  <tr><td><b>Respiratorias</b></td><td>Gripe y neumonía</td></tr>
+  <tr><td><b>Digestivas</b></td><td>Salmonelosis (<i>Salmonella</i> Typhimurium), <i>E. coli</i> y <i>Clostridium perfringens</i></td></tr>
+  <tr><td><b>Vacas lecheras</b></td><td>Mastitis crónica (<i>Staphylococcus aureus</i>)</td></tr>
+ </table>
+ <p class="note">ANIMALIA® es un coadyuvante preventivo y no sustituye el tratamiento indicado por el médico veterinario.</p>
+</section>
+</div>
+
+<div class="sp sp-ave">
+<section id="ev-aves">
+ <h2>Evidencias en aves</h2>
+ <h3>Pollo de engorda · casetas comerciales contra testigo</h3>
+ <table>
+  <tr><th>Caso</th><th class="r">Días de engorda</th><th class="r">Peso final</th><th class="r">Mortalidad</th></tr>
+  <tr><td><b>Caseta de 30,000 pollos</b></td><td class="r">49 → 46</td><td class="r">3.200 → 3.350 kg</td><td class="r">9% → 3%</td></tr>
+  <tr><td><b>Caseta de 32,000 pollos</b></td><td class="r">49 → 44</td><td class="r">—</td><td class="r">7.8% → 3.0%</td></tr>
+  <tr><td><b>Durango y Jalisco</b> <span class="note">2024–2025</span></td><td class="r">43–44</td><td class="r">3.250 → 3.400 kg</td><td class="r">7.1% → 3.5%</td></tr>
+ </table>
+ <p class="note">En Durango y Jalisco la conversión alimenticia mejoró de 1.68 a 1.55 (−8%).</p>
+ <h3>Gallina de postura · casetas comerciales contra testigo</h3>
+ <div class="grid">
+  <div class="card"><b>Golpe de calor · 4 días</b><br>Caseta de 200,000 aves. Bajas por cada 10,000 aves al día: <b>292 → 25 (−91%)</b>. <b>≈21,300 aves salvadas.</b></div>
+  <div class="card"><b>Postura · 4 días</b><br>Cajas de huevo por día: <b>223 → 225 (+0.9%)</b> y <b>89 bajas menos</b> que el testigo.</div>
+ </div>
+</section>
+
+<section id="ret-aves">
+ <h2>Retorno sobre la inversión</h2>
+ <div class="retbig"><b>6.9x a 11.5x</b><span>retorno medido en casetas comerciales de pollo de engorda</span></div>
+ <table style="margin-top:12px">
+  <tr><th>Caso</th><th class="r">Inversión</th><th class="r">Beneficio</th><th class="r">Retorno</th></tr>
+  <tr><td>Caseta de 30,000 pollos</td><td class="r">$17,600 ($0.59/ave)</td><td class="r">$202,500</td><td class="r"><b>11.5x</b></td></tr>
+  <tr><td>Caseta de 32,000 pollos</td><td class="r">$21,000 ($0.66/ave)</td><td class="r">$144,000</td><td class="r"><b>6.9x</b></td></tr>
+ </table>
+ <p class="note">Inversión de $0.50 a $0.70 por ave por ciclo. Carne a $45/kg; incluye ahorro de alimento y aves salvadas.</p>
+</section>
+
+<section id="dosis-aves">
+ <h2>Dosis por cada 1,000 L de agua</h2>
+ <table>
+  <tr><th>Aves</th><th class="r">Mantenimiento</th><th class="r">Desafío <i>(opcional)</i></th></tr>
+  <tr><td><b>Pollo de engorda</b></td><td class="r"><b>350 mL</b></td><td class="r">500 mL</td></tr>
+  <tr><td><b>Gallina de postura</b></td><td class="r"><b>350 mL</b></td><td class="r">500 mL</td></tr>
+ </table>
+ <p class="note">Desafío: calor, vacunaciones, cambios de alimento o alta densidad.</p>
+</section>
+
+<section id="enf-aves">
+ <h2>Enfermedades en las que coadyuva</h2>
+ <p>En aves, ANIMALIA® coadyuva a controlar y/o prevenir enfermedades respiratorias y digestivas, al reducir la carga microbiana en el agua y en el tracto digestivo.</p>
+ <table>
+  <tr><th>Tipo</th><th>Enfermedades</th></tr>
+  <tr><td><b>Digestivas</b></td><td>Salmonelosis (<i>Salmonella</i> Typhimurium), <i>E. coli</i> y <i>Clostridium perfringens</i></td></tr>
+  <tr><td><b>Respiratorias</b></td><td>Problemas respiratorios asociados a carga bacteriana en el agua</td></tr>
+ </table>
+ <p class="note">ANIMALIA® es un coadyuvante preventivo y no sustituye el tratamiento indicado por el médico veterinario.</p>
+</section>
+</div>
+
+<div class="sp sp-cer">
+<section id="ev-cerdos">
+ <h2>Evidencias en cerdos</h2>
+ <p>Estudio universitario contra testigo, con aplicación continua de 4.5 a 6 meses.</p>
+ <table>
+  <tr><th>Indicador</th><th class="r">Mejora</th><th>Qué significa</th></tr>
+  <tr><td>Ganancia de peso</td><td class="r"><b>+17.2%</b></td><td>Más kilos por cerdo en el mismo tiempo</td></tr>
+  <tr><td>Alimento por kg producido</td><td class="r"><b>−15%</b></td><td>Menos alimento por cada kilo</td></tr>
+  <tr><td>Costo de alimento en iniciador</td><td class="r"><b>$17 → $12</b></td><td>Ahorro en la etapa más cara</td></tr>
+  <tr><td>Mortalidad en pre-engorda</td><td class="r"><b>−1.5 pts</b></td><td>Más cerdos llegan a la engorda</td></tr>
+  <tr><td>Redrojos</td><td class="r"><b>−94%</b></td><td>Lotes más parejos</td></tr>
+  <tr><td>Control de ileítis</td><td class="r"><b>90%</b></td><td>Menos problemas digestivos</td></tr>
+  <tr><td>Hemoglobina y eritrocitos</td><td class="r"><b>+20%</b></td><td>Mejor estado de salud</td></tr>
+ </table>
+</section>
+
+<section id="ret-cerdos">
+ <h2>Retorno sobre la inversión</h2>
+ <div class="retbig"><b>5.0x</b><span>solo con el ahorro de alimento (−15% por kg producido)</span></div>
+ <table style="margin-top:12px">
+  <tr><th>Ciclo de 100 días</th><th class="r">100 cerdos</th><th class="r">500 cerdos</th><th class="r">1,000 cerdos</th></tr>
+  <tr><td>Inversión en ANIMALIA®</td><td class="r">$5,338</td><td class="r">$26,690</td><td class="r">$53,380</td></tr>
+  <tr><td>Ahorro en alimento (−15%)</td><td class="r">$26,520</td><td class="r">$132,600</td><td class="r">$265,200</td></tr>
+  <tr class="hlrow"><td>Ganancia neta</td><td class="r">$21,182</td><td class="r">$105,910</td><td class="r">$211,820</td></tr>
+ </table>
+ <p class="note">Inversión con 5 L de agua por cerdo al día, 350 mL por 1,000 L y $305/L ($53 por cerdo por ciclo). Alimento: 80 kg ganados en 100 días, conversión de 2.6 y alimento a $8.50/kg. No incluye el beneficio de los kilos extra ni de menor mortalidad.</p>
+</section>
+
+<section id="dosis-cerdos">
+ <h2>Dosis por cada 1,000 L de agua</h2>
+ <table>
+  <tr><th>Cerdos</th><th class="r">Mantenimiento</th><th class="r">Desafío <i>(opcional)</i></th></tr>
+  <tr><td><b>Todas las etapas</b><br><span class="note">Gestación, maternidad, destete, desarrollo y finalización</span></td><td class="r"><b>350 mL</b></td><td class="r">500 mL</td></tr>
+ </table>
+ <p class="note">Desafío: destete, cambios de alimento, calor o brotes.</p>
+</section>
+
+<section id="enf-cerdos">
+ <h2>Enfermedades en las que coadyuva</h2>
+ <p>En cerdos, ANIMALIA® coadyuva a controlar y/o prevenir enfermedades digestivas y respiratorias, y reduce el estrés en el destete.</p>
+ <table>
+  <tr><th>Enfermedad</th><th>Tipo</th></tr>
+  <tr><td><b>Ileítis</b></td><td>Digestiva</td></tr>
+  <tr><td><b>PED</b> (diarrea epidémica porcina)</td><td>Digestiva</td></tr>
+  <tr><td><b>PRRS</b> (síndrome reproductivo y respiratorio porcino)</td><td>Respiratoria y reproductiva</td></tr>
+  <tr><td><b>Ojo azul</b> (paramixovirus)</td><td>Neurológica y reproductiva</td></tr>
+  <tr><td><b>Aujeszky</b> (seudorrabia)</td><td>Respiratoria y nerviosa</td></tr>
+ </table>
+ <p class="note">ANIMALIA® es un coadyuvante preventivo y no sustituye el tratamiento indicado por el médico veterinario.</p>
+</section>
+</div>
+
 <section id="uso">
  <h2>Cómo se aplica</h2>
  <p>Directo al tanque o tinaco de agua.</p>
@@ -190,10 +327,10 @@ footer b{color:#fff}
   <div class="card"><span class="num">3</span><br>Mezcla para que quede uniforme.</div>
   <div class="card"><span class="num">4</span><br>Dalo como única fuente de agua.</div>
  </div>
- <p class="note" style="margin-top:10px">Ejemplo: tinaco de 1,100 L en engorda, dosis de mantenimiento = 110 mL de ANIMALIA®.</p>
+ <p class="note" style="margin-top:10px">Ejemplo: tinaco de 1,000 L → bovinos 100 mL · aves y cerdos 350 mL de ANIMALIA® (dosis de mantenimiento).</p>
 </section>
 
-<section id="retorno">
+<section id="retorno" class="sp sp-bov">
  <h2>Calcula tu retorno</h2>
  <div class="calc">
   <div class="inrow">
@@ -209,6 +346,9 @@ footer b{color:#fff}
   </div>
   <p class="note" id="rNote" style="margin-top:10px"></p>
  </div>
+</section>
+
+<section>
  <div class="promise"><span class="p1">Inviertes $1 peso,</span><span class="p2">con ANIMALIA® te regresa <em>3.5 veces más</em></span><span class="p3">KILOS = PESOS</span></div>
 </section>
 
@@ -254,7 +394,20 @@ footer b{color:#fff}
   var msg=n>0?'Hola, tengo '+f(n)+' cabezas en engorda. Me calculan '+f(litros,1)+' L de ANIMALIA para 30 días. Quiero cotizar.':'Hola, me interesa ANIMALIA para mi ganado.';
   var wurl='https://wa.me/528117990030?text='+encodeURIComponent(msg);$('waBtn').href=wurl;$('waFloat').href=wurl;
  }
- $('cab').addEventListener('input',calc);calc();
+ $('cab').addEventListener('input',calc);calc();window.__calc=calc;
+})();
+
+(function(){
+ var names={bov:'bovinos',ave:'aves',cer:'cerdos'},rev={bovinos:'bov',aves:'ave',cerdos:'cer'};
+ var msgs={bov:'Hola, me interesa ANIMALIA para mi ganado.',ave:'Hola, me interesa ANIMALIA para mis aves. Quiero cotizar.',cer:'Hola, me interesa ANIMALIA para mis cerdos. Quiero cotizar.'};
+ function set(k,push){document.body.classList.remove('s-bov','s-ave','s-cer');document.body.classList.add('s-'+k);
+  document.querySelectorAll('.tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.s===k)});
+  if(k!=='bov'){var u='https://wa.me/528117990030?text='+encodeURIComponent(msgs[k]);document.getElementById('waBtn').href=u;document.getElementById('waFloat').href=u;}
+  else if(window.__calc) window.__calc();
+  if(push&&location.hash!=='#'+names[k]) history.replaceState(null,'','#'+names[k]);}
+ document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){set(b.dataset.s,true);window.scrollTo({top:0,behavior:'smooth'})}});
+ function fromHash(){set(rev[location.hash.slice(1)]||'bov',false)}
+ window.addEventListener('hashchange',fromHash);fromHash();
 })();
 </script>
 </body>
